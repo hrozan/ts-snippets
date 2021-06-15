@@ -1,10 +1,10 @@
-type StringHashTable = {
+export type StringHashTable = {
 	[key: number]: string[]
 }
 
-const stringToStringHashTable = (str: string): StringHashTable => {
+export const stringToStringHashTable = (input: string): StringHashTable => {
 	const table: StringHashTable = {}
-	for (const c of str) {
+	for (const c of input) {
 		const key = c.charCodeAt(0)
 		if (!table[key]) {
 			table[key] = [c]
@@ -15,7 +15,7 @@ const stringToStringHashTable = (str: string): StringHashTable => {
 	return table
 }
 
-const stringHashTableToString = (table: StringHashTable): string => {
+export const stringHashTableToString = (table: StringHashTable): string => {
 	let result = ''
 	for (const i of Object.values(table)) {
 		i.forEach((c) => (result = result.concat(c)))
@@ -23,11 +23,11 @@ const stringHashTableToString = (table: StringHashTable): string => {
 	return result
 }
 
-export const checkPermutation = (main: string, compare: string): boolean => {
-	if (main.length !== compare.length) {
+export const checkPermutation = (input: string, compare: string): boolean => {
+	if (input.length !== compare.length) {
 		return false
 	}
-	const stringHashTable = stringToStringHashTable(main)
+	const stringHashTable = stringToStringHashTable(input)
 	const compareStringHashTable = stringToStringHashTable(compare)
 
 	return stringHashTableToString(stringHashTable) === stringHashTableToString(compareStringHashTable)
