@@ -1,4 +1,4 @@
-export const palindromePermutation = (_input: string): boolean => {
+export function palindromePermutation(_input: string): boolean {
 	const input = _input.replace(/\s/g, '').toLowerCase()
 
 	const set = new Set<string>()

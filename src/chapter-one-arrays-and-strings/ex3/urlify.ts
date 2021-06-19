@@ -1,1 +1,3 @@
-export const urlify = (input: string): string => input.trimStart().trimEnd().replace(/\s/g, '%20')
+export function urlify(input: string): string {
+	return input.trimStart().trimEnd().replace(/\s/g, '%20')
+}
