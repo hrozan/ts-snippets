@@ -8,16 +8,18 @@
 
 ### Getting Started
 
-```shell
-# Install node version
-nvm use
+Install node version
 
-# Install dependencies
-npm i
+    nvm use
 
-# Build
-npm run build
+Install dependencies
 
-# Run test
-npm t
-```
+    npm i
+
+Build
+
+    npm run build
+
+Run test
+
+    npm t
