@@ -1,4 +1,4 @@
-# Cracking the Code Interview Exercises Resolution
+# Typescript Code Snippets
 
 ### Dependencies
 
@@ -6,16 +6,16 @@
 
 ### Getting Started
 
-````shell
+```shell
 # Install node version
 nvm use
 
 # Install dependencies
-npm i 
+npm i
+
+# Build
+npm run build
 
 # Run test
-npm t 
-# or
-npm run test 
-````
-
+npm t
+```

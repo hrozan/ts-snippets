@@ -24,13 +24,16 @@ jobs:
         with:
           node-version: "16.3.0"
 
-      - name: Install Packages for Root
+      - name: Install Packages
         run: npm ci
         env:
           CI: true
+
+      - name: Build
+        run: npm run build
 
       - name: Run Eslint
         run: npm run lint
 
       - name: Run Unit Test
-        run: npm test
+        run: npm t
