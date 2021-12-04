@@ -1,10 +1,7 @@
 export function isUnique(str: string): boolean {
-	for (let i = 0; i < str.length; i++) {
-		for (let j = i + 1; j < str.length; j++) {
-			if (str[i] === str[j]) {
-				return false
-			}
-		}
+	const set = new Set()
+	for (const s of str) {
+		set.add(s)
 	}
-	return true
+	return (set.size === str.length)
 }
