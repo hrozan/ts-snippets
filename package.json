@@ -6,7 +6,8 @@
 	"scripts": {
 		"test": "jest",
 		"lint": "eslint src/ --fix",
-		"build": "tsc"
+		"build": "tsc",
+                "webserver:dev": "nodemon ./src/examples/webserver/main.ts"
 	},
 	"keywords": [],
 	"author": "",
