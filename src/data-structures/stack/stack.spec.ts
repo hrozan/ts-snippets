@@ -11,4 +11,11 @@ describe('Stack', () => {
 
 		expect(stack.count).toEqual(1)
 	})
+
+	it('should pop a item from the stack', () => {
+		stack.push('test')
+		stack.pop()
+
+		expect(stack.count).toEqual(0)
+	})
 })
