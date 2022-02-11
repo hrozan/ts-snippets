@@ -1,15 +1,15 @@
 export function palindromePermutation(_input: string): boolean {
-	const input = _input.replace(/\s/g, '').toLowerCase()
+	const input = _input.replace(/\s/g, "").toLowerCase();
 
-	const set = new Set<string>()
+	const set = new Set<string>();
 
 	for (const c of input) {
 		if (set.has(c)) {
-			set.delete(c)
+			set.delete(c);
 		} else {
-			set.add(c)
+			set.add(c);
 		}
 	}
 
-	return set.size <= 1
+	return set.size <= 1;
 }

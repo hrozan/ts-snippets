@@ -1,14 +1,11 @@
-import { createServer } from 'http'
-import { Socket } from 'net'
+import { createServer, IncomingMessage, ServerResponse } from "http";
 
-function handler(socket: Socket) {
-	console.log(socket.remoteAddress)
-	socket.end()
+function listener(_request: IncomingMessage, response: ServerResponse) {
+	response.writeHead(200);
+	response.end("hello");
 }
 
-const server = createServer()
-
-server.on('connection', handler)
+const server = createServer(listener);
 server.listen(3000, () => {
-	console.log('server start on http://localhost:3000')
-})
+	console.log("server start on http://localhost:3000");
+});

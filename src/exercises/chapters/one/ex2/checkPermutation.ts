@@ -1,34 +1,34 @@
 export type StringHashTable = {
-	[key: number]: string[]
-}
+	[key: number]: string[];
+};
 
 export function stringToStringHashTable(input: string): StringHashTable {
-	const table: StringHashTable = {}
+	const table: StringHashTable = {};
 	for (const c of input) {
-		const key = c.charCodeAt(0)
+		const key = c.charCodeAt(0);
 		if (!table[key]) {
-			table[key] = [c]
+			table[key] = [c];
 		} else {
-			table[key].push(c)
+			table[key].push(c);
 		}
 	}
-	return table
+	return table;
 }
 
 export function stringHashTableToString(table: StringHashTable): string {
-	let result = ''
+	let result = "";
 	for (const i of Object.values(table)) {
-		i.forEach((c) => (result = result.concat(c)))
+		i.forEach((c) => (result = result.concat(c)));
 	}
-	return result
+	return result;
 }
 
 export function checkPermutation(input: string, compare: string): boolean {
 	if (input.length !== compare.length) {
-		return false
+		return false;
 	}
-	const stringHashTable = stringToStringHashTable(input)
-	const compareStringHashTable = stringToStringHashTable(compare)
+	const stringHashTable = stringToStringHashTable(input);
+	const compareStringHashTable = stringToStringHashTable(compare);
 
-	return stringHashTableToString(stringHashTable) === stringHashTableToString(compareStringHashTable)
+	return stringHashTableToString(stringHashTable) === stringHashTableToString(compareStringHashTable);
 }

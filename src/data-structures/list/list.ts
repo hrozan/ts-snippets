@@ -4,40 +4,41 @@ export class Node<T> {
 
 class EmptyListError extends Error {
 	constructor() {
-		super('EmptyListError')
+		super("EmptyListError");
 	}
 }
 
 export class List<T> {
-	private head: Node<T> | null
+	private head: Node<T> | null;
 
 	constructor() {
-		this.head = null
+		this.head = null;
 	}
 
 	append(value: T): void {
-		const node = new Node(value)
+		const node = new Node(value);
+
 		if (this.head === null) {
-			this.head = node
-			return
+			this.head = node;
+			return;
 		}
 
-		let aux = this.head
+		let aux = this.head;
 		while (aux.next !== null) {
-			aux = aux.next
+			aux = aux.next;
 		}
-		aux.next = node
+
+		aux.next = node;
 	}
-
 	forEach(cb: (item: T) => void): void {
-		let aux = this.head
-		if (aux === null) {
-			throw new EmptyListError()
+		if (this.head === null) {
+			throw new EmptyListError();
 		}
 
+		let aux = this.head;
 		while (aux.next !== null) {
-			cb(aux.value)
-			aux = aux.next
+			cb(aux.value);
+			aux = aux.next;
 		}
 	}
 }
