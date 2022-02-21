@@ -6,6 +6,11 @@ function listener(_request: IncomingMessage, response: ServerResponse) {
 }
 
 const server = createServer(listener);
-server.listen(3000, () => {
-	console.log("server start on http://localhost:3000");
-});
+
+export function run(): void {
+	server.listen(3000);
+}
+
+export function close(): void {
+	server.close();
+}
