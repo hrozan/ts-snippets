@@ -7,10 +7,26 @@ function listener(_request: IncomingMessage, response: ServerResponse) {
 
 const server = createServer(listener);
 
-export function run(): void {
-	server.listen(3000);
+export function run(): Promise<void> {
+	return new Promise((resolve, rejects) => {
+		server.on("error", () => {
+			rejects()
+		})
+
+		server.listen(3000, ()=>{
+			resolve()
+		})
+	})
 }
 
-export function close(): void {
-	server.close();
+export function close(): Promise<void> {
+	return new Promise((resolve, rejects) => {
+		server.close(err => {
+			if (err) {
+				rejects(err)
+			}
+			resolve()
+		});
+
+	})
 }

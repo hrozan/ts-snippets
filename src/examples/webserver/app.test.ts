@@ -2,12 +2,12 @@ import { run, close } from "./app";
 import axios from "axios";
 
 describe("app", function () {
-	afterEach(function () {
-		close();
+	afterEach(async function () {
+		await close();
 	});
 
 	test("should ", async function () {
-		run();
+		await run();
 
 		const response = await axios.get("http://localhost:3000");
 
