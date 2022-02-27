@@ -2,14 +2,16 @@ import { createServer, IncomingMessage, Server, ServerResponse } from "http";
 
 export class App {
 	server: Server;
+
 	constructor() {
-		this.server = createServer(this.listener);
+		this.server = createServer(App.listener);
 	}
 
-	private listener(_request: IncomingMessage, response: ServerResponse) {
+	private static listener(_request: IncomingMessage, response: ServerResponse) {
 		response.writeHead(200);
 		response.end("hello");
 	}
+
 	run(): Promise<void> {
 		return new Promise((resolve, rejects) => {
 			this.server.on("error", () => {
