@@ -4,7 +4,6 @@
 	"version": "1.0.0",
 	"description": "My Typescript Code Examples",
 	"main": "dist/index",
-	"workspaces": ["utils"],
 	"scripts": {
 		"test": "jest",
 		"test:watch": "jest --watch",

@@ -1,4 +1,4 @@
-import { generateRandomNumberArray } from "@hrozan/utils";
+import { generateRandomNumberArray } from "../__test__/utils";
 import { selectionSort } from "./selection.sort";
 
 describe("Selection Sort", () => {

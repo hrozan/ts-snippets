@@ -1,5 +1,5 @@
 import { bubbleSort } from "./bubbleSort";
-import { generateRandomNumberArray } from "@hrozan/utils";
+import { generateRandomNumberArray } from "../__test__/utils";
 
 describe("Bubble Sort", () => {
 	let arr: number[];

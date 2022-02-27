@@ -1,3 +1,7 @@
+/**
+ * Generate an array with 50 number
+ * @param length Custom length
+ */
 export function generateRandomNumberArray(length = 50): number[] {
 	const arr: number[] = [];
 	const max = length * 2;
