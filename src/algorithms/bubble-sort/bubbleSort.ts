@@ -1,14 +1,17 @@
+function swap(arr: number[], xp: number, yp: number): void {
+	const temp = arr[xp];
+	arr[xp] = arr[yp];
+	arr[yp] = temp;
+}
+
 export function bubbleSort(arr: number[]): void {
-	let swap = true;
-	while (swap) {
-		swap = false;
+	let hasSwapped = true;
+	while (hasSwapped) {
+		hasSwapped = false;
 		for (let i = 0; i < arr.length - 1; i++) {
 			if (arr[i] > arr[i + 1]) {
-				let temp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = temp;
-
-				swap = true;
+				swap(arr, i, i + 1);
+				hasSwapped = true;
 			}
 		}
 	}
