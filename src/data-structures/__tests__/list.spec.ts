@@ -1,4 +1,4 @@
-import { List } from "./list";
+import { List } from "../list";
 
 describe("List", () => {
 	let list: List<number>;

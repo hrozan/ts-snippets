@@ -1,4 +1,4 @@
-import { HashMap } from "./hashMap";
+import { HashMap } from "../hashMap";
 
 xdescribe("Hash Table", () => {
 	let map: HashMap<string>;

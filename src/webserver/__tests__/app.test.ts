@@ -1,5 +1,7 @@
 import axios from "axios";
-import { App } from "./app";
+import { App } from "../app";
+
+const BASE_URL = "http://localhost:3000";
 
 describe("app", () => {
 	let app: App;
@@ -15,7 +17,7 @@ describe("app", () => {
 	test("should ", async function () {
 		await app.run();
 
-		const response = await axios.get("http://localhost:3000");
+		const response = await axios.get(BASE_URL);
 
 		expect(response.status).toEqual(200);
 	});

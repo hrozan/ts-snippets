@@ -1,5 +1,5 @@
-import { generateRandomNumberArray } from "../__test__/utils";
-import { selectionSort } from "./selection.sort";
+import { generateRandomNumberArray } from "./utils/generateRandomNumberArray";
+import { selectionSort } from "../selection.sort";
 
 describe("Selection Sort", () => {
 	let arr: number[];
