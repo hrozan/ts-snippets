@@ -4,8 +4,20 @@
 
 # Getting Started
 
+Install dependencies
+
 ```bash
-yarn install    # Install dependecies
-yarn run build  # Build project
-yarn test       # Run tests
+yarn install
+```
+
+Build project
+
+```bash
+yarn run build
+```
+
+Run tests
+
+```bash
+yarn test       
 ```
