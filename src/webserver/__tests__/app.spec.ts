@@ -14,7 +14,7 @@ describe("app", () => {
 		return app.close();
 	});
 
-	test("should ", async function () {
+	it("should return 200 ", async function () {
 		await app.run();
 
 		const response = await axios.get(BASE_URL);
