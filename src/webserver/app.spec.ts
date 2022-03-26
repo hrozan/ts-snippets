@@ -1,7 +1,7 @@
 import http from "axios";
 import { StatusCodes } from "http-status-codes";
 
-import { App } from "../app";
+import { App } from "./app";
 
 const BASE_URL = "http://localhost:3000";
 

@@ -1,7 +1,7 @@
-import { bubbleSort } from "../bubbleSort";
-import { generateRandomNumberArray } from "./utils/generateRandomNumberArray";
+import { generateRandomNumberArray } from "../generateRandomNumberArray";
+import { selectionSort } from "./selectionSort";
 
-describe("Bubble Sort", () => {
+describe("Selection Sort", () => {
 	let arr: number[];
 
 	beforeEach(() => {
@@ -9,7 +9,7 @@ describe("Bubble Sort", () => {
 	});
 
 	it("should sort the array", () => {
-		bubbleSort(arr);
+		selectionSort(arr);
 
 		for (let i = 0; i < arr.length - 1; i++) {
 			expect(arr[i]).toBeLessThanOrEqual(arr[i + 1]);
