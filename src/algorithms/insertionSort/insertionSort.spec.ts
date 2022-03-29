@@ -1,7 +1,7 @@
 import { insertionSort } from "./insertionSort";
 import { generateRandomNumberArray } from "../generateRandomNumberArray";
 
-xdescribe("Insertion Sort", () => {
+describe("Insertion Sort", () => {
 	let arr: number[];
 
 	beforeEach(() => {
