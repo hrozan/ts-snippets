@@ -5,16 +5,14 @@ function swap(arr: number[], xp: number, yp: number): void {
 }
 
 export function selectionSort(arr: number[]): void {
-	let min_idx: number;
 	for (let i = 0; i < arr.length - 1; i++) {
-		min_idx = i;
-
+		let minIdx = i;
 		for (let j = i + 1; j < arr.length; j++) {
-			if (arr[j] < arr[min_idx]) {
-				min_idx = j;
+			if (arr[j] < arr[minIdx]) {
+				minIdx = j;
 			}
 		}
 
-		swap(arr, min_idx, i);
+		swap(arr, minIdx, i);
 	}
 }
