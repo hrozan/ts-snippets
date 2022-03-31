@@ -1,6 +1,6 @@
-export function insertionSort(arr: number[]) {
+export function insertionSort(arr: number[]): void {
 	for (let i = 1; i < arr.length; i++) {
-		let temp = arr[i];
+		const temp = arr[i];
 		let position = i - 1;
 
 		while (position >= 0) {
@@ -13,5 +13,4 @@ export function insertionSort(arr: number[]) {
 			arr[position + 1] = temp;
 		}
 	}
-	return arr;
 }
