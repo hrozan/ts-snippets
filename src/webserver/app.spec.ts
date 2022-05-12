@@ -1,7 +1,7 @@
 import http from "axios";
 import { StatusCodes } from "http-status-codes";
 
-import { App } from "./app";
+import { application, App } from "./app";
 
 const BASE_URL = "http://localhost:3000";
 
@@ -9,7 +9,7 @@ describe("app", () => {
 	let app: App;
 
 	beforeEach(() => {
-		app = new App();
+		app = application();
 	});
 
 	afterEach(async () => {

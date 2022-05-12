@@ -1,37 +1,39 @@
-import { createServer, IncomingMessage, Server, ServerResponse } from "http";
+import { createServer, IncomingMessage, ServerResponse } from "http";
 
-export class App {
-	server: Server;
+export type App = {
+	run: () => Promise<void>;
+	close: () => Promise<void>;
+};
 
-	constructor() {
-		this.server = createServer(App.listener);
-	}
-
-	private static listener(_request: IncomingMessage, response: ServerResponse) {
+export function application(): App {
+	const listener = (request: IncomingMessage, response: ServerResponse) => {
 		response.writeHead(200);
 		response.end("hello");
-	}
+	};
 
-	run(): Promise<void> {
-		return new Promise((resolve, rejects) => {
-			this.server.on("error", () => {
-				rejects();
-			});
+	const server = createServer(listener);
+	return {
+		run() {
+			return new Promise((resolve, rejects) => {
+				server.on("error", () => {
+					rejects();
+				});
 
-			this.server.listen(3000, () => {
-				resolve();
+				server.listen(3000, () => {
+					resolve();
+				});
 			});
-		});
-	}
+		},
 
-	close(): Promise<void> {
-		return new Promise((resolve, rejects) => {
-			this.server.close((err) => {
-				if (err) {
-					rejects(err);
-				}
-				resolve();
+		close() {
+			return new Promise((resolve, rejects) => {
+				server.close((err) => {
+					if (err) {
+						rejects(err);
+					}
+					resolve();
+				});
 			});
-		});
-	}
+		},
+	};
 }
