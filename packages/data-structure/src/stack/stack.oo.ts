@@ -1,7 +1,7 @@
 export class Stack<T> {
 	private readonly item: T[] = [];
 
-	get count(): number {
+	count(): number {
 		return this.item.length;
 	}
 
