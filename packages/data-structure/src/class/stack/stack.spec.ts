@@ -1,9 +1,9 @@
-import { createStack, Stack } from "./stack.fp";
+import { Stack } from "./stack";
 
-describe("Stack Fp", () => {
+describe("Stack OO", () => {
 	let stack: Stack<string>;
 	beforeEach(() => {
-		stack = createStack();
+		stack = new Stack<string>();
 	});
 
 	it("should push a item to the stack", () => {
