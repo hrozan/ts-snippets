@@ -1,5 +1,4 @@
 import http from "axios";
-import { StatusCodes } from "http-status-codes";
 
 import { application, App } from "./app";
 
@@ -21,6 +20,6 @@ describe("app", () => {
 
 		const response = await http.get(BASE_URL);
 
-		expect(response.status).toEqual(StatusCodes.OK);
+		expect(response.status).toEqual(200);
 	});
 });
