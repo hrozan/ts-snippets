@@ -1,13 +1,9 @@
-# Typescript Code Snippets 🟦
-
-[![CI](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml/badge.svg)](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml)
-
-# Getting Started
+# Typescript Code Snippets [![CI](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml/badge.svg)](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml)
 
 Install dependencies
 
 ```bash
-yarn install
+yarn install && yarn bootstrap
 ```
 
 Build project
