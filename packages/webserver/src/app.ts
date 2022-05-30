@@ -1,39 +1,45 @@
-import { createServer, IncomingMessage, ServerResponse } from "http";
+import { createServer, Server, IncomingMessage, ServerResponse } from "http";
 
-export type App = {
-	run: () => Promise<void>;
-	close: () => Promise<void>;
-};
+export interface App {
+	run(): Promise<App>;
+	close(): Promise<void>;
+}
 
-export function application(): App {
-	const listener = (request: IncomingMessage, response: ServerResponse) => {
+class AppServer implements App {
+	constructor(private readonly server: Server) {}
+
+	private onRequest(_request: IncomingMessage, response: ServerResponse) {
 		response.writeHead(200);
-		response.end("hello");
-	};
+		response.end();
+	}
 
-	const server = createServer(listener);
-	return {
-		run() {
-			return new Promise((resolve, rejects) => {
-				server.on("error", () => {
-					rejects();
-				});
-
-				server.listen(3000, () => {
-					resolve();
-				});
+	async run(): Promise<App> {
+		return new Promise((resolve, rejects) => {
+			this.server.on("error", () => {
+				rejects();
 			});
-		},
 
-		close() {
-			return new Promise((resolve, rejects) => {
-				server.close((err) => {
-					if (err) {
-						rejects(err);
-					}
-					resolve();
-				});
+			this.server.on("request", this.onRequest);
+
+			this.server.listen(3000, () => {
+				resolve(this);
 			});
-		},
-	};
+		});
+	}
+
+	async close(): Promise<void> {
+		return new Promise((resolve, rejects) => {
+			this.server.close((err) => {
+				if (err) {
+					rejects(err);
+				}
+				resolve();
+			});
+		});
+	}
+}
+
+export function createApp(): App {
+	const server = createServer();
+	return new AppServer(server);
 }

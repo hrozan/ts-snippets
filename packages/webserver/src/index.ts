@@ -1,7 +1,5 @@
-import { application } from "./app";
+import { createApp } from "./app";
 
-const app = application();
-
-app.run().then(() => {
-	console.log("server running");
-});
+createApp()
+	.run()
+	.then(() => console.log("server running"));

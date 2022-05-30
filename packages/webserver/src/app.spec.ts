@@ -1,25 +1,28 @@
 import http from "axios";
-
-import { application, App } from "./app";
+import { App, createApp } from "./app";
 
 const BASE_URL = "http://localhost:3000";
+
+enum HttpStatus {
+	Ok = 200,
+}
 
 describe("app", () => {
 	let app: App;
 
 	beforeEach(() => {
-		app = application();
+		app = createApp();
 	});
 
 	afterEach(async () => {
-		return app.close();
+		await app.close();
 	});
 
-	it("should return 200 ", async function () {
+	it("should return 200 ", async () => {
 		await app.run();
 
 		const response = await http.get(BASE_URL);
 
-		expect(response.status).toEqual(200);
+		expect(response.status).toEqual(HttpStatus.Ok);
 	});
 });
