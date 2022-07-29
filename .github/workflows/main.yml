@@ -1,12 +1,8 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
+name: ts-snippets
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   integration:
@@ -14,21 +10,21 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: "Setup Node"
+      - name: 'Setup Node'
         uses: actions/setup-node@v1
         with:
-          node-version: "18.*"
+          node-version: '18.*'
 
-      - name: "Install dependencies"
+      - name: 'Install dependencies'
         run: npm install
         env:
           CI: true
 
-      - name: Build
-        run: npm run build
+      - name: 'Build'
+        run: npm run build -- --noEmit
 
-      - name: Run Eslint
+      - name: 'Run Eslint'
         run: npm run lint
 
-      - name: Run Test
+      - name: 'Run Test'
         run: npm test
