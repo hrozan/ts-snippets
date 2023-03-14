@@ -1,5 +1,5 @@
 export class Node<T> {
-  constructor(public readonly value: T, public next: Node<T> | null = null) {}
+  constructor(public readonly value: T, public next: Node<T> | null = null) { }
 }
 
 class EmptyListError extends Error {

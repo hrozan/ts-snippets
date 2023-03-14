@@ -1,15 +1,22 @@
-# Typescript Snippets
+# Typescript Snippets [![CI](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml/badge.svg)](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml)
+### Roadmap
 
-[![CI](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml/badge.svg)](https://github.com/hrozan/ts-code-snippets/actions/workflows/main.yml)
+#### Data Structure
 
-```bash
-npm install # Install dependencies
-```
+- [x] Linked List
+- [ ] Tree
+- [ ] Tries
+- [ ] Graphs
+- [x] Stack
+- [ ] Queue
+- [ ] Heap
+- [ ] Vector
+- [ ] Hash Table
 
-```bash
-npm run build # Build project
-```
+#### Algorithms
 
-```bash
-npm test # Run tests
-```
+- [ ] Breadth-First Search
+- [ ] Depth-First Search
+- [ ] Binary Search
+- [x] Merge Sort
+- [ ] Quick Search
