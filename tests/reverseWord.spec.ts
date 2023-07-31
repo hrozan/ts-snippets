@@ -1,4 +1,4 @@
-import { reverseWord } from '../reverseWord'
+import { reverseWord } from '../src/algorithms/reverseWord'
 
 describe('Reverse Word', () => {
   it('should reverse a string', () => {

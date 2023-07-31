@@ -1,5 +1,5 @@
-import { insertionSort } from '../insertionSort'
-import { generateRandomNumberArray } from '../generateRandomNumberArray'
+import { insertionSort } from '../src/algorithms/sort/insertionSort'
+import { generateRandomNumberArray } from './utils/generateRandomNumberArray'
 
 describe('Insertion Sort', () => {
   let arr: number[]

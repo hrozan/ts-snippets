@@ -1,4 +1,4 @@
-import { Stack } from '../stack'
+import { Stack } from '../src/data-structure/stack'
 
 describe('Stack OO', () => {
   let stack: Stack<string>

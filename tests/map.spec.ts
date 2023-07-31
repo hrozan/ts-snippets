@@ -1,4 +1,4 @@
-import { Map } from '../map'
+import { Map } from '../src/data-structure/map'
 
 describe('Map', () => {
   let map: Map<string>
