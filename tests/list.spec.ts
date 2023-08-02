@@ -19,4 +19,12 @@ describe('List', () => {
       count++
     })
   })
+
+  it('should create a list with 3 elements', () => {
+    expect(() => {
+      list.forEach(() => {
+        return
+      })
+    }).toThrowError()
+  })
 })

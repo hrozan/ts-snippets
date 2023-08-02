@@ -25,4 +25,11 @@ describe('Stack OO', () => {
 
     expect(stack.count()).toEqual(0)
   })
+
+  it('should peek a item from the stack', () => {
+    stack.push('test')
+
+    expect(stack.peek()).toEqual('test')
+    expect(stack.count()).toEqual(1)
+  })
 })

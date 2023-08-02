@@ -1,11 +1,5 @@
 export class Node<T> {
-  constructor(public readonly value: T, public next: Node<T> | null = null) { }
-}
-
-class EmptyListError extends Error {
-  constructor() {
-    super('EmptyListError')
-  }
+  constructor(public readonly value: T, public next: Node<T> | null = null) {}
 }
 
 export class List<T> {
@@ -30,9 +24,10 @@ export class List<T> {
 
     aux.next = node
   }
+
   forEach(cb: (item: T) => void): void {
     if (this.head === null) {
-      throw new EmptyListError()
+      throw new Error('Empty List')
     }
 
     let aux = this.head
